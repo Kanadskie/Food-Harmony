@@ -4,6 +4,8 @@ import { useForm } from 'react-hook-form';
 import person from './assets/person.jpeg';
 import healthy from './assets/healthy.jpeg';
 import lifestyle from './assets/lifestyle.jpeg'
+import logo from './assets/logo.svg';
+import qr from './assets/qr.svg';
 
 const navLinks = [
   { label: 'Философия', href: '#philosophy' },
@@ -336,7 +338,7 @@ function App() {
           <nav className="mx-auto flex max-w-6xl items-center justify-between rounded-full bg-cream/95 px-2 py-2 sm:px-4 sm:py-3 shadow-gentle backdrop-blur">
             <a href="#" className="flex items-center">
               <img
-                src="/logo.svg"
+                src={logo}
                 alt="Food Harmony"
                 className="h-7 w-auto sm:h-12"
               />
@@ -917,7 +919,7 @@ function App() {
                         <p className="text-sm font-semibold text-charcoal sm:text-base">Telegram</p>
                         <p className="mt-1 text-base font-semibold text-coral group-hover:text-sage sm:mt-2 sm:text-lg">Написать в Telegram</p>
                         <div className="mt-3 flex justify-start">
-                          <img src="/qr.svg" alt="QR код" className="h-16 w-16 sm:h-20 sm:w-20" />
+                          <img src={qr} alt="QR код" className="h-16 w-16 sm:h-20 sm:w-20" />
                         </div>
                       </a>
                       <div className="group rounded-xl border-2 border-sage/30 bg-cream/80 p-4 transition hover:border-sage hover:bg-cream hover:shadow-lg sm:rounded-2xl sm:p-6">
