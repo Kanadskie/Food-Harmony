@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.pdf$
+Disallow: /*.docx$
+Disallow: /*.xlsx$
+
+# Скорость сканирования
+Crawl-delay: 2
+
+# Карта сайта
+Sitemap: https://food-harmony.ru/sitemap.xml
+
+# Основное зеркало
+Host: https://food-harmony.ru
+
+# Поисковые системы
+User-agent: Googlebot
+Allow: /
+Disallow: /private/
+
+User-agent: YandexBot
+Allow: /
+Disallow: /private/
+Clean-param: ref /service/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /private/

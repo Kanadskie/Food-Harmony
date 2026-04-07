@@ -2,54 +2,127 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=5"
-    />
-    <title>Food Harmony - Осознанное питание без жёстких правил и диет</title>
-    <meta
-      name="description"
-      content="Food Harmony создаёт персональные планы питания и образа жизни, помогая сохранять энергию, здоровье и внутренний баланс каждый день."
-    />
-    <meta
-      name="keywords"
-      content="Food Harmony, персональное питание, нутрициолог, здоровый образ жизни, осознанное питание"
-    />
-    <meta property="og:title" content="Food Harmony — Осознанное питание без жёстких правил и диет" />
-    <meta
-      property="og:description"
-      content="Гармония между телом и умом. Присоединяйтесь к Food Harmony, чтобы обрести устойчивую энергию и поддержку экспертов."
-    />
+    <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/favicon.png">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
+    
+    <!-- Основные метатеги -->
+    <title>Гармония с едой / Food Harmony - Осознанное питание без жёстких правил и диет | Нутрициолог Николаева Анна</title>
+    <meta name="description" content="Персональные программы питания от дипломированного нутрициолога. Осознанное питание, коррекция веса, детокс-программы FMD. Индивидуальный подход, научная диагностика." />
+    
+    <!-- Ключевые слова -->
+    <meta name="keywords" content="нутрициолог, персональное питание, осознанное питание, коррекция веса, детокс программа, FMD, здоровый образ жизни, Гармония с едой / Food Harmony, Николаева Анна" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Гармония с едой / Food Harmony — Осознанное питание без жёстких правил и диет" />
+    <meta property="og:description" content="Гармония между телом и умом. Персональные программы питания от дипломированного нутрициолога Николаевой Анны." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://food-harmony.example.com" />
-    <meta property="og:image" content="https://food-harmony.example.com/food-harmony-logo.png" />
+    <meta property="og:url" content="https://food-harmony.ru" />
+    <meta property="og:image" content="https://food-harmony.ru/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="Гармония с едой / Food Harmony" />
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://food-harmony.ru" />
+    
+    <!-- Дополнительные метатеги -->
+    <meta name="author" content="Анна Николаева" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="theme-color" content="#fffdd0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="format-detection" content="telephone=no" />
+    
+    <!-- Предзагрузка шрифтов -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;700&family=Playfair+Display:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;700&family=Playfair+Display:wght@400;600;700&display=swap" as="style" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Предзагрузка критичных ресурсов -->
+    <link rel="preload" href="data:application/octet-stream;base64,aW1wb3J0IHsgU3RyaWN0TW9kZSB9IGZyb20gJ3JlYWN0JwppbXBvcnQgeyBjcmVhdGVSb290IH0gZnJvbSAncmVhY3QtZG9tL2NsaWVudCcKaW1wb3J0ICcuL2luZGV4LmNzcycKaW1wb3J0IEFwcCBmcm9tICcuL0FwcC50c3gnCgpjcmVhdGVSb290KGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdyb290JykhKS5yZW5kZXIoCiAgPFN0cmljdE1vZGU+CiAgICA8QXBwIC8+CiAgPC9TdHJpY3RNb2RlPiwKKQo=" as="script" />
+    
+    <!-- Structured Data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Food Harmony",
-        "url": "https://food-harmony.example.com",
-        "logo": "https://food-harmony.example.com/food-harmony-logo.png",
-        "description": "Персональные программы питания и сопровождение для осознанной жизни.",
-        "sameAs": [
-          "https://www.instagram.com/foodharmony",
-          "https://t.me/foodharmony"
-        ],
-        "foundingDate": "2020"
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://food-harmony.ru/#organization",
+            "name": "",
+            "url": "https://food-harmony.ru",
+            "logo": "https://food-harmony.ru/logo.svg",
+            "description": "Сервис персонального питания и сопровождения для осознанной жизни.",
+            "sameAs": [
+              "https://www.instagram.com/foodharmony",
+              "https://t.me/Nutriciolog_Anatolevna"
+            ],
+            "foundingDate": "2020",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+7-925-755-88-59",
+              "contactType": "customer service",
+              "availableLanguage": ["Russian"]
+            }
+          },
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://food-harmony.ru/#localbusiness",
+            "name": "Гармония с едой / Food Harmony",
+            "description": "Услуги нутрициолога, персональные программы питания",
+            "image": "https://food-harmony.ru/og-image.jpg",
+            "telephone": "+7-925-755-88-59",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "RU"
+            },
+            "openingHours": "Mo-Su 09:00-21:00",
+            "priceRange": "2000-30000 руб.",
+            "url": "https://food-harmony.ru"
+          },
+          {
+            "@type": "Person",
+            "@id": "https://food-harmony.ru/#person",
+            "name": "Анна Николаева",
+            "jobTitle": "Дипломированный нутрициолог",
+            "description": "Спикер научных конференций, автор детокс-программы FMD",
+            "worksFor": {
+              "@id": "https://food-harmony.ru/#organization"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://food-harmony.ru/#website",
+            "url": "https://food-harmony.ru",
+            "name": "Гармония с едой / Food Harmony",
+            "description": "Осознанное питание без жёстких правил и диет",
+            "publisher": {
+              "@id": "https://food-harmony.ru/#organization"
+            },
+            "inLanguage": "ru-RU"
+          }
+        ]
       }
     </script>
-    <script type="module" crossorigin src="/Food-Harmony/assets/index-DNdRaBrU.js"></script>
-    <link rel="stylesheet" crossorigin href="/Food-Harmony/assets/index-c9g_cHlh.css">
+    <script type="module" crossorigin src="/assets/index-C3Y7UNry.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CMKfYAMy.css">
   </head>
   <body>
     <div id="root"></div>
+    <!-- No-JS fallback -->
+    <noscript>
+      <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #F9F7F0; display: flex; justify-content: center; align-items: center; z-index: 9999; padding: 20px;">
+        <div style="text-align: center; max-width: 600px;">
+          <h1 style="font-family: 'Playfair Display', serif; color: #2C3E50; margin-bottom: 20px;">Гармония с едой / Food Harmony</h1>
+          <p style="color: #2C3E50; margin-bottom: 30px;">Для работы сайта необходим JavaScript. Пожалуйста, включите его в настройках браузера.</p>
+          <p style="color: #2C3E50;">Контакты: +7 (925) 755-88-59</p>
+        </div>
+      </div>
+    </noscript>
   </body>
 </html>
