@@ -93,7 +93,7 @@ function sendSMTP($to, $subject, $body, $replyTo = null) {
     $smtpHost = 'ssl://smtp.yandex.ru';
     $smtpPort = 465;
     $smtpUser = 'foodharmony@yandex.ru';
-    $smtpPass = 'ВАШ_ПАРОЛЬ_ПРИЛОЖЕНИЯ'; // ← ЗАМЕНИТЕ НА РЕАЛЬНЫЙ ПАРОЛЬ!
+    $smtpPass = 'fekbrqycuyzzleel'; // ← ЗАМЕНИТЕ НА РЕАЛЬНЫЙ ПАРОЛЬ!
     
     $fromName = 'Food Harmony';
     $fromEmail = 'foodharmony@yandex.ru';
