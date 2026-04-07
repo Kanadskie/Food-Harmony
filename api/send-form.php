@@ -36,6 +36,7 @@ if (!$data) {
 // Извлекаем данные
 $name = isset($data['name']) ? trim(strip_tags($data['name'])) : '';
 $email = isset($data['email']) ? trim($data['email']) : '';
+$phone = isset($data['phone']) ? trim(strip_tags($data['phone'])) : '';  // ← ДОБАВЛЕНО
 $goal = isset($data['goal']) ? trim(strip_tags($data['goal'])) : '';
 $message = isset($data['message']) ? trim(strip_tags($data['message'])) : '';
 
@@ -61,6 +62,10 @@ if (empty($email)) {
     $errors[] = 'Некорректный формат email';
 }
 
+if (empty($phone)) {
+    $errors[] = 'Телефон обязателен для заполнения';
+}
+
 if (!empty($errors)) {
     echo json_encode([
         'success' => false,
@@ -81,6 +86,7 @@ $logEntry .= "Номер: $requestNumber\n";
 $logEntry .= "Дата: $timestamp\n";
 $logEntry .= "Имя: $name\n";
 $logEntry .= "Email: $email\n";
+$logEntry .= "Телефон: $phone\n";  // ← ДОБАВЛЕНО
 $logEntry .= "Цель: $goalDisplay\n";
 $logEntry .= "Сообщение:\n$message\n";
 $logEntry .= "IP: " . ($_SERVER['REMOTE_ADDR'] ?? 'Неизвестно') . "\n";
@@ -93,7 +99,7 @@ function encodeSubject($subject) {
 }
 
 // ====================================================
-// 1. Письмо администратору (foodharmony@yandex.ru)
+// 1. Письмо администратору
 // ====================================================
 $adminEmail = 'foodharmony@yandex.ru';
 $adminSubject = "Заявка с сайта Food Harmony № $requestNumber";
@@ -119,6 +125,7 @@ $adminEmailBody = "
     .message-box { background: #FDF8F0; padding: 20px; border-radius: 16px; margin: 15px 0; border: 1px solid #E8D9C5; }
     .message-text { color: #2C2C2C; font-size: 15px; line-height: 1.5; }
     .footer { background: #FDF8F0; padding: 20px 25px; text-align: center; border-top: 1px solid #EEE8E0; color: #88957F; font-size: 12px; }
+    .phone-link { color: #E09B7E; text-decoration: none; font-weight: 500; }
 </style>
 </head>
 <body>
@@ -139,6 +146,10 @@ $adminEmailBody = "
             <div class=\"field-group\">
                 <div class=\"field-label\">📧 Email</div>
                 <div class=\"field-value\"><a href=\"mailto:$email\">$email</a></div>
+            </div>
+            <div class=\"field-group\">
+                <div class=\"field-label\">📱 Телефон</div>
+                <div class=\"field-value\"><a href=\"tel:$phone\" class=\"phone-link\">$phone</a></div>
             </div>
             <div class=\"field-group\">
                 <div class=\"field-label\">🎯 Цель программы</div>
@@ -170,7 +181,7 @@ $adminHeaders .= "X-Mailer: PHP/" . phpversion() . "\r\n";
 $adminEmailSent = mail($adminEmail, encodeSubject($adminSubject), $adminEmailBody, $adminHeaders, "-f no-reply@food-harmony.ru");
 
 // ====================================================
-// 2. Письмо пользователю (подтверждение)
+// 2. Письмо пользователю (подтверждение) с телефоном
 // ====================================================
 $userSubject = "Food Harmony — подтверждение заявки № $requestNumber";
 
@@ -215,10 +226,11 @@ $userEmailBody = "
                 <div style=\"font-size: 11px; color: #88957F; margin-top: 5px;\">$timestamp</div>
             </div>
             <div class=\"info-box\">
+                <p><strong>📱 Ваш телефон:</strong> $phone</p>
                 <p><strong>🎯 Ваша цель:</strong> $goalDisplay</p>
                 <p><strong>📧 Email:</strong> $email</p>
             </div>
-            <p>Я отвечу вам в ближайшее рабочее время (обычно в течение 24 часов). Мы проведём онлайн-встречу, чтобы глубже разобрать ваш запрос, образ жизни и цели.</p>
+            <p>Я свяжусь с вами по указанному телефону в ближайшее рабочее время (обычно в течение 24 часов).</p>
             <div class=\"contact-block\">
                 <h3>✨ Связаться со мной напрямую</h3>
                 <div class=\"contact-item\">📱 Telegram: <a href=\"https://t.me/Nutriciolog_Anatolevna\">@Nutriciolog_Anatolevna</a></div>
@@ -259,7 +271,7 @@ file_put_contents($logFile, date('Y-m-d H:i:s') . " - Отправка поль�
 // ====================================================
 echo json_encode([
     'success' => true,
-    'message' => 'Спасибо! Мы вернёмся с ответом в течение рабочего дня.',
+    'message' => 'Спасибо! Мы свяжемся с вами по телефону в ближайшее время.',
     'requestNumber' => $requestNumber,
     'timestamp' => $timestamp,
     'emailsSent' => [
