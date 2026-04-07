@@ -110,22 +110,112 @@ $adminEmailBody = "
 <head>
 <meta charset=\"UTF-8\">
 <title>Новая заявка с сайта</title>
+<link href=\"https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap\" rel=\"stylesheet\">
 <style>
-    body { font-family: 'Georgia', 'Times New Roman', serif; line-height: 1.6; color: #2C2C2C; background: #FDF8F0; margin: 0; padding: 20px; }
-    .container { max-width: 600px; margin: 0 auto; background: #FFFFFF; border-radius: 24px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
-    .header { background: linear-gradient(135deg, #88957F 0%, #6B7A62 100%); padding: 30px 25px; text-align: center; }
-    .header h1 { margin: 0; color: #FFFFFF; font-size: 24px; font-weight: 500; }
-    .header p { margin: 10px 0 0; color: rgba(255,255,255,0.9); font-size: 14px; }
+    body { 
+        font-family: 'Lato', 'Segoe UI', Arial, sans-serif; 
+        line-height: 1.6; 
+        color: #2C2C2C; 
+        background: #FDF8F0; 
+        margin: 0; 
+        padding: 20px; 
+    }
+    .container { 
+        max-width: 600px; 
+        margin: 0 auto; 
+        background: #FFFFFF; 
+        border-radius: 24px; 
+        overflow: hidden; 
+        box-shadow: 0 8px 30px rgba(0,0,0,0.08); 
+    }
+    .header { 
+        background: linear-gradient(135deg, #88957F 0%, #6B7A62 100%); 
+        padding: 30px 25px; 
+        text-align: center; 
+    }
+    .header h1 { 
+        margin: 0; 
+        color: #FFFFFF; 
+        font-size: 24px; 
+        font-weight: 700; 
+        letter-spacing: -0.3px;
+    }
+    .header p { 
+        margin: 10px 0 0; 
+        color: rgba(255,255,255,0.9); 
+        font-size: 14px; 
+        font-weight: 300;
+    }
     .content { padding: 30px 25px; }
-    .request-number { background: #F0EDE6; padding: 15px 20px; border-radius: 16px; margin: 20px 0; text-align: center; border-left: 4px solid #E09B7E; }
-    .request-number strong { color: #E09B7E; font-size: 18px; display: block; margin-bottom: 5px; }
-    .field-group { margin: 20px 0; padding-bottom: 15px; border-bottom: 1px solid #EEE8E0; }
-    .field-label { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #88957F; margin-bottom: 8px; font-weight: 600; }
-    .field-value { font-size: 16px; color: #2C2C2C; background: #FDF8F0; padding: 12px 15px; border-radius: 12px; margin-top: 5px; }
-    .message-box { background: #FDF8F0; padding: 20px; border-radius: 16px; margin: 15px 0; border: 1px solid #E8D9C5; }
-    .message-text { color: #2C2C2C; font-size: 15px; line-height: 1.5; }
-    .footer { background: #FDF8F0; padding: 20px 25px; text-align: center; border-top: 1px solid #EEE8E0; color: #88957F; font-size: 12px; }
-    .phone-link { color: #E09B7E; text-decoration: none; font-weight: 500; }
+    .request-number { 
+        background: #F0EDE6; 
+        padding: 15px 20px; 
+        border-radius: 16px; 
+        margin: 20px 0; 
+        text-align: center; 
+        border-left: 4px solid #E09B7E; 
+    }
+    .request-number strong { 
+        color: #E09B7E; 
+        font-size: 18px; 
+        display: block; 
+        margin-bottom: 5px; 
+        font-weight: 900;
+    }
+    .field-group { 
+        margin: 20px 0; 
+        padding-bottom: 15px; 
+        border-bottom: 1px solid #EEE8E0; 
+    }
+    .field-label { 
+        font-size: 12px; 
+        text-transform: uppercase; 
+        letter-spacing: 1px; 
+        color: #88957F; 
+        margin-bottom: 8px; 
+        font-weight: 700; 
+    }
+    .field-value { 
+        font-size: 16px; 
+        color: #2C2C2C; 
+        background: #FDF8F0; 
+        padding: 12px 15px; 
+        border-radius: 12px; 
+        margin-top: 5px; 
+        font-weight: 400;
+    }
+    .message-box { 
+        background: #FDF8F0; 
+        padding: 20px; 
+        border-radius: 16px; 
+        margin: 15px 0; 
+        border: 1px solid #E8D9C5; 
+    }
+    .message-text { 
+        color: #2C2C2C; 
+        font-size: 15px; 
+        line-height: 1.5; 
+        font-weight: 400;
+    }
+    .footer { 
+        background: #FDF8F0; 
+        padding: 20px 25px; 
+        text-align: center; 
+        border-top: 1px solid #EEE8E0; 
+        color: #88957F; 
+        font-size: 12px; 
+        font-weight: 300;
+    }
+    .phone-link { 
+        color: #E09B7E; 
+        text-decoration: none; 
+        font-weight: 700; 
+    }
+    a { 
+        color: #E09B7E; 
+        text-decoration: none; 
+        font-weight: 600;
+    }
 </style>
 </head>
 <body>
@@ -191,30 +281,126 @@ $userEmailBody = "
 <head>
 <meta charset=\"UTF-8\">
 <title>Подтверждение заявки</title>
+<link href=\"https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap\" rel=\"stylesheet\">
 <style>
-    body { font-family: 'Georgia', 'Times New Roman', serif; line-height: 1.6; color: #2C2C2C; background: #FDF8F0; margin: 0; padding: 20px; }
-    .container { max-width: 550px; margin: 0 auto; background: #FFFFFF; border-radius: 24px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
-    .header { background: linear-gradient(135deg, #88957F 0%, #6B7A62 100%); padding: 35px 25px; text-align: center; }
-    .header h1 { margin: 0; color: #FFFFFF; font-size: 26px; font-weight: 400; }
-    .header p { margin: 10px 0 0; color: rgba(255,255,255,0.85); font-size: 14px; }
+    body { 
+        font-family: 'Lato', 'Segoe UI', Arial, sans-serif; 
+        line-height: 1.6; 
+        color: #2C2C2C; 
+        background: #FDF8F0; 
+        margin: 0; 
+        padding: 20px; 
+    }
+    .container { 
+        max-width: 550px; 
+        margin: 0 auto; 
+        background: #FFFFFF; 
+        border-radius: 24px; 
+        overflow: hidden; 
+        box-shadow: 0 8px 30px rgba(0,0,0,0.08); 
+    }
+    .header { 
+        background: linear-gradient(135deg, #88957F 0%, #6B7A62 100%); 
+        padding: 35px 25px; 
+        text-align: center; 
+    }
+    .header h1 { 
+        margin: 0; 
+        color: #FFFFFF; 
+        font-size: 26px; 
+        font-weight: 700; 
+        letter-spacing: -0.5px;
+    }
+    .header p { 
+        margin: 10px 0 0; 
+        color: rgba(255,255,255,0.85); 
+        font-size: 14px; 
+        font-weight: 300;
+    }
     .content { padding: 30px 25px; }
-    .thank-you { font-size: 20px; color: #6B5B4E; margin-bottom: 15px; }
-    .request-number { background: #F0EDE6; padding: 15px 20px; border-radius: 16px; text-align: center; margin: 20px 0; }
-    .request-number .number { font-size: 20px; font-weight: 600; color: #E09B7E; }
-    .request-number .label { font-size: 11px; text-transform: uppercase; color: #88957F; }
-    .info-box { background: #FDF8F0; padding: 20px; border-radius: 16px; margin: 20px 0; border-left: 3px solid #E09B7E; }
-    .contact-block { background: #F0EDE6; padding: 20px; border-radius: 16px; margin: 25px 0; text-align: center; }
-    .contact-block h3 { color: #6B5B4E; font-size: 16px; margin: 0 0 15px; }
-    .contact-item { margin: 12px 0; }
-    .contact-item a { color: #E09B7E; text-decoration: none; }
-    .signature { margin-top: 30px; padding-top: 20px; border-top: 1px solid #EEE8E0; text-align: center; }
-    .footer { background: #FDF8F0; padding: 20px 25px; text-align: center; border-top: 1px solid #EEE8E0; color: #88957F; font-size: 11px; }
+    .thank-you { 
+        font-size: 20px; 
+        color: #6B5B4E; 
+        margin-bottom: 15px; 
+        font-weight: 700;
+    }
+    .request-number { 
+        background: #F0EDE6; 
+        padding: 15px 20px; 
+        border-radius: 16px; 
+        text-align: center; 
+        margin: 20px 0; 
+    }
+    .request-number .number { 
+        font-size: 20px; 
+        font-weight: 900; 
+        color: #E09B7E; 
+    }
+    .request-number .label { 
+        font-size: 11px; 
+        text-transform: uppercase; 
+        color: #88957F; 
+        letter-spacing: 1px;
+        font-weight: 700;
+    }
+    .info-box { 
+        background: #FDF8F0; 
+        padding: 20px; 
+        border-radius: 16px; 
+        margin: 20px 0; 
+        border-left: 3px solid #E09B7E; 
+    }
+    .info-box p { 
+        margin: 8px 0; 
+        font-size: 14px; 
+        font-weight: 400;
+    }
+    .contact-block { 
+        background: #F0EDE6; 
+        padding: 20px; 
+        border-radius: 16px; 
+        margin: 25px 0; 
+        text-align: center; 
+    }
+    .contact-block h3 { 
+        color: #6B5B4E; 
+        font-size: 16px; 
+        margin: 0 0 15px; 
+        font-weight: 700;
+    }
+    .contact-item { 
+        margin: 12px 0; 
+        font-weight: 400;
+    }
+    .contact-item a { 
+        color: #E09B7E; 
+        text-decoration: none; 
+        font-weight: 600;
+    }
+    .signature { 
+        margin-top: 30px; 
+        padding-top: 20px; 
+        border-top: 1px solid #EEE8E0; 
+        text-align: center; 
+    }
+    .signature strong { 
+        font-weight: 900;
+    }
+    .footer { 
+        background: #FDF8F0; 
+        padding: 20px 25px; 
+        text-align: center; 
+        border-top: 1px solid #EEE8E0; 
+        color: #88957F; 
+        font-size: 11px; 
+        font-weight: 300;
+    }
 </style>
 </head>
 <body>
     <div class=\"container\">
         <div class=\"header\">
-            <h1>🍃 Гармония с едой</h1>
+            <h1>🍃 Гармония с едой / Food Harmony</h1>
             <p>Осознанное питание без жёстких правил</p>
         </div>
         <div class=\"content\">
